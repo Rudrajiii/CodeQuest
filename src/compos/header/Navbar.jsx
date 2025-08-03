@@ -5,29 +5,29 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="py-2 w-[100%] sticky inset-0 z-30 top-0">
-      <div className="relative flex items-center justify-between px-6">
+    <div className="py-2 max-[999px]:py-1.5 max-[767px]:py-1 w-[100%] sticky inset-0 z-30 top-0">
+      <div className="relative flex items-center justify-between px-6 max-[999px]:px-5 max-[767px]:px-4 max-[443px]:px-3">
         {/* Company Logo/Name - Always visible */}
-        <div className="flex-shrink-0">
-          <h2 className="text-xl sm:text-2xl font-bold text-black">
+        <div className="flex-shrink-0 z-10">
+          <h2 className="text-xl sm:text-2xl max-[999px]:text-xl max-[767px]:text-lg max-[443px]:text-base font-bold text-black">
             Code<span className="bg-gradient-to-r from-pink-500 via-indigo-600 to-pink-500 bg-clip-text text-transparent">Quest</span>
           </h2>
         </div>
 
         {/* Desktop Navigation - Hidden on mobile < 444px */}
-        <div className="flex-1 flex justify-center min-[444px]:flex hidden">
+        <div className="flex-1 justify-center min-[677px]:flex hidden mr-[120px]">
           <SlideTabs />
         </div>
 
         {/* Mobile Menu Button - Only visible < 444px */}
-        <div className="min-[444px]:hidden flex items-center justify-end">
+        <div className="min-[677px]:hidden flex  items-center justify-end flex-shrink-0">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-lg bg-white border-2 border-black hover:bg-black hover:text-white transition-all duration-200"
+            className="p-2 max-[999px]:p-1.5 max-[767px]:p-1.5 max-[443px]:p-1 rounded-lg bg-white border-2 border-black hover:bg-black hover:text-white transition-all duration-200"
             aria-label="Toggle mobile menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-6 h-6 max-[999px]:w-5 max-[999px]:h-5 max-[767px]:w-5 max-[767px]:h-5 max-[443px]:w-4 max-[443px]:h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Icon Buttons */}
-        <div className="hidden min-[677px]:flex items-center gap-2 lg:gap-3 absolute right-2 sm:right-4 lg:right-6 top-1/2 transform -translate-y-1/2">
+        <div className="hidden min-[677px]:flex items-center gap-2 lg:gap-3 max-[999px]:gap-2 max-[767px]:gap-1.5 absolute right-2 sm:right-4 lg:right-6 max-[999px]:right-3 max-[767px]:right-2 top-1/2 transform -translate-y-1/2">
           <IconButton 
             icon="info" 
             onClick={() => console.log('Info clicked')}
@@ -104,7 +104,7 @@ const SlideTabs = () => {
           opacity: 0,
         }));
       }}
-      className="relative flex w-fit rounded-full border-2 border-black bg-white p-1"
+      className="relative flex w-fit rounded-full border-2 border-black bg-white p-1 max-[999px]:p-1 max-[767px]:p-1.5"
     >
       <Tab setPosition={setPosition}>Collection</Tab>
       <Tab setPosition={setPosition}>Contribute</Tab>
@@ -133,7 +133,7 @@ const Tab = ({ children, setPosition }) => {
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      className="relative z-10 block cursor-pointer px-3 py-1.5 max-[999px]:px-3 max-[999px]:py-1.5 max-[767px]:px-2 max-[767px]:py-1 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base max-[999px]:md:px-4 max-[999px]:md:py-2.5 max-[767px]:md:px-3 max-[767px]:md:py-2"
     >
       {children}
     </li>
@@ -146,7 +146,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-black md:h-12"
+      className="absolute z-0 h-7 max-[999px]:h-7 max-[767px]:h-6 rounded-full bg-black md:h-12 max-[999px]:md:h-10 max-[767px]:md:h-9"
     />
   );
 };
@@ -154,7 +154,7 @@ const Cursor = ({ position }) => {
 const IconButton = ({ icon, onClick, title }) => {
   const InfoIcon = () => (
     <svg 
-      className="w-4 h-4 sm:w-5 sm:h-5" 
+      className="w-4 h-4 sm:w-5 sm:h-5 max-[999px]:w-4 max-[999px]:h-4 max-[767px]:w-3.5 max-[767px]:h-3.5" 
       fill="none" 
       stroke="currentColor" 
       viewBox="0 0 24 24"
@@ -170,7 +170,7 @@ const IconButton = ({ icon, onClick, title }) => {
 
   const GitHubIcon = () => (
     <svg 
-      className="w-4 h-4 sm:w-5 sm:h-5" 
+      className="w-4 h-4 sm:w-5 sm:h-5 max-[999px]:w-4 max-[999px]:h-4 max-[767px]:w-3.5 max-[767px]:h-3.5" 
       fill="currentColor" 
       viewBox="0 0 24 24"
     >
@@ -182,7 +182,7 @@ const IconButton = ({ icon, onClick, title }) => {
     <button
       onClick={onClick}
       title={title}
-      className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full bg-white border-2 border-black flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+      className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 max-[999px]:w-8 max-[999px]:h-8 max-[767px]:w-7 max-[767px]:h-7 rounded-full bg-white border-2 border-black flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
     >
       {icon === 'info' ? <InfoIcon /> : <GitHubIcon />}
     </button>
