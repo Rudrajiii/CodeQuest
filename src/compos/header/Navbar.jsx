@@ -9,21 +9,21 @@ export const Navbar = () => {
       <div className="relative flex items-center justify-between px-6 max-[999px]:px-5 max-[767px]:px-4 max-[443px]:px-3">
         {/* Company Logo/Name - Always visible */}
         <div className="flex-shrink-0 z-10">
-          <h2 className="text-xl sm:text-2xl max-[999px]:text-xl max-[767px]:text-lg max-[443px]:text-base font-bold text-black">
+          <h2 className="text-xl sm:text-2xl max-[999px]:text-xl max-[767px]:text-lg max-[443px]:text-xl font-bold text-black">
             Code<span className="bg-gradient-to-r from-pink-500 via-indigo-600 to-pink-500 bg-clip-text text-transparent">Quest</span>
           </h2>
         </div>
 
-        {/* Desktop Navigation - Hidden on mobile < 444px */}
+        {/* Desktop Navigation - Hidden on mobile < 677px */}
         <div className="flex-1 justify-center min-[677px]:flex hidden mr-[120px]">
           <SlideTabs />
         </div>
 
-        {/* Mobile Menu Button - Only visible < 444px */}
+        {/* Mobile Menu Button - Only visible < 677px */}
         <div className="min-[677px]:hidden flex  items-center justify-end flex-shrink-0">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 max-[999px]:p-1.5 max-[767px]:p-1.5 max-[443px]:p-1 rounded-lg bg-white border-2 border-black hover:bg-black hover:text-white transition-all duration-200"
+            className="p-2 max-[999px]:p-1.5 max-[767px]:p-1.5 max-[443px]:p-1.5 rounded-lg bg-white border-2 border-black hover:bg-black hover:text-white transition-all duration-200"
             aria-label="Toggle mobile menu"
           >
             <svg
@@ -60,7 +60,7 @@ export const Navbar = () => {
           />
           <IconButton 
             icon="github" 
-            onClick={() => window.open('https://github.com', '_blank')}
+            onClick={() => window.open('https://github.com/Rudrajiii', '_blank')}
             title="GitHub"
           />
         </div>

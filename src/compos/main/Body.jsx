@@ -2,8 +2,11 @@ import __life__ from "../../assets/__life__.py.png"
 
 export const Body = () => {
     return (
-        <section className="w-[100%] text-center sm:mt-10 mt-16 flex flex-col relative min-h-[700px] pb-20">
-            {/* Pro Tips card (moved to left red box) */}
+        <section className="w-[100%] text-center sm:mt-16 mt-16 flex flex-col relative min-h-[700px] pb-20">
+            {/* Fixed responsive floated tag with proper centering */}
+            <div className="floated-tag absolute top-[-50px] left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center text-xs sm:text-sm font-medium transition-shadow duration-300 z-20">
+                Plan Build Deliver <span className="w-2 h-2 bg-white rounded-full ml-2 animate-pulse"></span>
+            </div>
             <div
                 className="absolute lg:block hidden top-[190px] left-[-5px] xl:left-10 2xl:left-24 w-48 xl:w-52 2xl:w-56 p-3 rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-purple-300 transform hover:scale-110 hover:rotate-0 transition-all duration-300 hover:shadow-xl z-10 cursor-pointer"
             >
@@ -227,6 +230,13 @@ export const Body = () => {
                 src={__life__}
                 alt="__life__" 
                 className="mx-auto h-[300px] sm:h-[500px] bg-black rounded-xl"/>
+            </div>
+
+            <div className="dev-title-footer-tag">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-800">
+                    Join the <span className="bg-gradient-to-r from-pink-500 via-indigo-600 to-pink-500 bg-clip-text text-transparent">CodeQuest</span> community today!
+                </h2>
+                <p className="font-semibold text-gray-600">@2025 Made With ❤️ by Rudra</p>
             </div>
         </section>
     )
